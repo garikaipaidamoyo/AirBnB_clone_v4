@@ -1,0 +1,24 @@
+#Under Question 2 Select some Amenities to be comfortable do the following:
+
+i)  Add a <input type="checkbox"> tag to the li tag of each amenity
+
+ii)  The new checkbox must be at 10px on the left of the Amenity name
+
+iii)  Add to the input tags of each amenity (<li> tag) the attribute data-id=":amenity_id" => this will allow us to retrieve the Amenity ID from the DOM
+
+iv)  Add to the input tags of each amenity (<li> tag) the attribute data-name=":amenity_name" => this will allow us to retrieve the Amenity name from the DOM
+
+
+
+#Under question 3 API status do the following:
+
+i) enter the file api/v1/app.py
+
+ii) edit the line CORS(app, origins="0.0.0.0")
+                to
+        CORS(app, resources={r"/api/v1/*": {"origins": "*"}})
+
+iii) go to file 2-hbnb.py
+
+iv) in the file 2-hbnb.py change 1-hbnb to 2-hbnb on line 22
+
