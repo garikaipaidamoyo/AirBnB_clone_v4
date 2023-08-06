@@ -24,4 +24,18 @@ $(document).ready(function() {
 		const amenitiesList = Object.values(selectedAmenities).join(', ');
 		$('div.amenities h4').text('Amenities: ' + amenitiesList);
 	}
+
+	//Check API status on page load
+	checkApiStatus();
+
+	//Function to check API status
+	function checkApiStatus() {
+		$.get('http://0.0.0.0:5001/api/v1/status/', function(data) {
+			if (data.status === 'OK') {
+				$('#api_status').addClass('available');
+			} else {
+				$('#api_status').removeClass('available');
+			}
+		});
+	}
 });
