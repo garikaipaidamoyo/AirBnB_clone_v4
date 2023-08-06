@@ -43,13 +43,7 @@ $(document).ready(function() {
 	loadPlaces();
 
 	// Function to load places from the front-end
-	function loadPlaces();
-
-	// Function to load places from the front-end
-	loadPlaces();
-
-	// Function to load places from the front-end
-	function loadPlCES() {
+	function loadPlaces() {
 		const requestData = JSON.stringify({});
 		fetch('http://0.0.0.0:5001/api/v1/places_search/', {
 			method: 'POST',
