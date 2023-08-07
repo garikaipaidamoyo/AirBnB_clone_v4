@@ -7,7 +7,6 @@ from models.user import User
 from models.amenity import Amenity
 from models import storage
 from api.v1.views import app_views
-from api.v1.views.places import search_places
 from flask import abort, jsonify, make_response, request
 from flasgger.utils import swag_from
 
@@ -119,12 +118,12 @@ def put_place(place_id):
 
 
 @app_views.route('/places_search', methods=['POST'], strict_slashes=False)
-def search_places():
+def places_search():
     """Search for places based on request JSON"""
     data = request.get_json()
 
     if data is None:
-        return jsonify({"error": "Not a JSON"}), 400
+        abort(400, description="Not a JSON")
 
     states = data.get('states', [])
     cities = data.get('cities', [])
